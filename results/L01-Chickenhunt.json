@@ -1,0 +1,1510 @@
+{
+  "name": "event-logs/L01-Chickenhunt_DeclareModel",
+  "tasks": [
+    {
+      "name": "Attack Hunter"
+    },
+    {
+      "name": "Bring Chicken to Altar"
+    },
+    {
+      "name": "Buy Item"
+    },
+    {
+      "name": "Buy Store"
+    },
+    {
+      "name": "Join ChickenHunt"
+    },
+    {
+      "name": "Provide Shares Approval"
+    },
+    {
+      "name": "Receive Ethereum from Altar"
+    },
+    {
+      "name": "Receive Shares"
+    },
+    {
+      "name": "Receive Shares Approval"
+    },
+    {
+      "name": "Redeem Shares"
+    },
+    {
+      "name": "Sell Item"
+    },
+    {
+      "name": "Sell Store"
+    },
+    {
+      "name": "Suffer an Attack"
+    },
+    {
+      "name": "Transfer Shares"
+    },
+    {
+      "name": "Upgrade Depot"
+    },
+    {
+      "name": "Upgrade Hunter"
+    },
+    {
+      "name": "Upgrade Pet"
+    }
+  ],
+  "constraints": [
+    {
+      "template": "ChainPrecedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "ChainResponse",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Suffer an Attack"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Bring Chicken to Altar"
+        ],
+        [
+          "Receive Shares"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Bring Chicken to Altar"
+        ],
+        [
+          "Upgrade Hunter"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Sell Item"
+        ],
+        [
+          "Buy Item"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Sell Store"
+        ],
+        [
+          "Buy Store"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Attack Hunter"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Attack Hunter"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Bring Chicken to Altar"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Bring Chicken to Altar"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Buy Item"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Buy Item"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Buy Item"
+        ],
+        [
+          "Upgrade Pet"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Buy Store"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Buy Store"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Attack Hunter"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Bring Chicken to Altar"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Buy Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Buy Store"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Join ChickenHunt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Receive Ethereum from Altar"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Receive Shares"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Sell Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Sell Store"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Suffer an Attack"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Transfer Shares"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Upgrade Depot"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Upgrade Hunter"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Provide Shares Approval"
+        ],
+        [
+          "Upgrade Pet"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Ethereum from Altar"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Ethereum from Altar"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Attack Hunter"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Bring Chicken to Altar"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Buy Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Buy Store"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Receive Ethereum from Altar"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Receive Shares"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Sell Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Sell Store"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Transfer Shares"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Upgrade Depot"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Upgrade Hunter"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares Approval"
+        ],
+        [
+          "Upgrade Pet"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Receive Shares"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Redeem Shares"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Redeem Shares"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Sell Item"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Sell Item"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Sell Item"
+        ],
+        [
+          "Upgrade Pet"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Sell Store"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Sell Store"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Suffer an Attack"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Transfer Shares"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Transfer Shares"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Upgrade Depot"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Upgrade Depot"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Upgrade Hunter"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Upgrade Hunter"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Upgrade Pet"
+        ],
+        [
+          "Buy Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Upgrade Pet"
+        ],
+        [
+          "Provide Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Upgrade Pet"
+        ],
+        [
+          "Receive Shares Approval"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Upgrade Pet"
+        ],
+        [
+          "Sell Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotResponse",
+      "parameters": [
+        [
+          "Attack Hunter"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Attack Hunter"
+        ],
+        [
+          "Buy Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Attack Hunter"
+        ],
+        [
+          "Sell Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Attack Hunter"
+        ],
+        [
+          "Upgrade Depot"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Attack Hunter"
+        ],
+        [
+          "Upgrade Pet"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Bring Chicken to Altar"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Bring Chicken to Altar"
+        ],
+        [
+          "Transfer Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Bring Chicken to Altar"
+        ],
+        [
+          "Upgrade Depot"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Attack Hunter"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Bring Chicken to Altar"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Buy Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Buy Store"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Receive Ethereum from Altar"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Receive Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Sell Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Sell Store"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Transfer Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Upgrade Depot"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Upgrade Hunter"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Upgrade Pet"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Receive Ethereum from Altar"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Receive Shares"
+        ],
+        [
+          "Buy Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Receive Shares"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Receive Shares"
+        ],
+        [
+          "Sell Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Receive Shares"
+        ],
+        [
+          "Transfer Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Receive Shares"
+        ],
+        [
+          "Upgrade Depot"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Receive Shares"
+        ],
+        [
+          "Upgrade Pet"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Suffer an Attack"
+        ],
+        [
+          "Receive Ethereum from Altar"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Upgrade Hunter"
+        ],
+        [
+          "Buy Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Upgrade Hunter"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Upgrade Hunter"
+        ],
+        [
+          "Sell Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Upgrade Hunter"
+        ],
+        [
+          "Transfer Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Upgrade Hunter"
+        ],
+        [
+          "Upgrade Depot"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Upgrade Hunter"
+        ],
+        [
+          "Upgrade Pet"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Attack Hunter"
+        ],
+        [
+          "Receive Shares"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Attack Hunter"
+        ],
+        [
+          "Suffer an Attack"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Attack Hunter"
+        ],
+        [
+          "Upgrade Hunter"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Bring Chicken to Altar"
+        ],
+        [
+          "Suffer an Attack"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Buy Item"
+        ],
+        [
+          "Receive Ethereum from Altar"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Buy Item"
+        ],
+        [
+          "Upgrade Depot"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Buy Store"
+        ],
+        [
+          "Receive Ethereum from Altar"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Buy Store"
+        ],
+        [
+          "Upgrade Depot"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Buy Store"
+        ],
+        [
+          "Upgrade Pet"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Receive Shares"
+        ],
+        [
+          "Suffer an Attack"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Sell Item"
+        ],
+        [
+          "Upgrade Depot"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Upgrade Hunter"
+        ],
+        [
+          "Suffer an Attack"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Upgrade Pet"
+        ],
+        [
+          "Receive Ethereum from Altar"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "Attack Hunter"
+        ],
+        [
+          "Bring Chicken to Altar"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "Attack Hunter"
+        ],
+        [
+          "Receive Ethereum from Altar"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "Buy Item"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "Buy Store"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "Sell Item"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "Sell Store"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "Upgrade Depot"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "Upgrade Pet"
+        ],
+        [
+          "Redeem Shares"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Bring Chicken to Altar"
+        ],
+        [
+          "Receive Ethereum from Altar"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Buy Item"
+        ],
+        [
+          "Sell Item"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Buy Store"
+        ],
+        [
+          "Sell Store"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Join ChickenHunt"
+        ],
+        [
+          "Suffer an Attack"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Receive Shares"
+        ],
+        [
+          "Receive Ethereum from Altar"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Receive Shares"
+        ],
+        [
+          "Upgrade Hunter"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Upgrade Hunter"
+        ],
+        [
+          "Receive Ethereum from Altar"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Upgrade Hunter"
+        ],
+        [
+          "Receive Shares"
+        ]
+      ]
+    }
+  ]
+}

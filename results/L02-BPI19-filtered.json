@@ -1,0 +1,4012 @@
+{
+  "name": "event-logs/L02-BPI19-filtered_DeclareModel",
+  "tasks": [
+    {
+      "name": "Cancel Goods Receipt"
+    },
+    {
+      "name": "Cancel Invoice Receipt"
+    },
+    {
+      "name": "Change Delivery Indicator"
+    },
+    {
+      "name": "Change Final Invoice Indicator"
+    },
+    {
+      "name": "Change Price"
+    },
+    {
+      "name": "Clear Invoice"
+    },
+    {
+      "name": "Create Purchase Order Item"
+    },
+    {
+      "name": "Delete Purchase Order Item"
+    },
+    {
+      "name": "Record Goods Receipt"
+    },
+    {
+      "name": "Record Invoice Receipt"
+    },
+    {
+      "name": "Record Service Entry Sheet"
+    },
+    {
+      "name": "Remove Payment Block"
+    },
+    {
+      "name": "SRM: Awaiting Approval"
+    },
+    {
+      "name": "SRM: Change was Transmitted"
+    },
+    {
+      "name": "SRM: Complete"
+    },
+    {
+      "name": "SRM: Created"
+    },
+    {
+      "name": "SRM: Deleted"
+    },
+    {
+      "name": "SRM: Document Completed"
+    },
+    {
+      "name": "SRM: Held"
+    },
+    {
+      "name": "SRM: In Transfer to Execution Syst."
+    },
+    {
+      "name": "SRM: Incomplete"
+    },
+    {
+      "name": "SRM: Ordered"
+    },
+    {
+      "name": "SRM: Transaction Completed"
+    },
+    {
+      "name": "SRM: Transfer Failed (E.Sys.)"
+    },
+    {
+      "name": "Vendor creates debit memo"
+    },
+    {
+      "name": "Vendor creates invoice"
+    }
+  ],
+  "constraints": [
+    {
+      "template": "ChainPrecedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "SRM: Incomplete"
+        ]
+      ]
+    },
+    {
+      "template": "ChainPrecedence",
+      "parameters": [
+        [
+          "SRM: Deleted"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "ChainResponse",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "SRM: Complete"
+        ]
+      ]
+    },
+    {
+      "template": "ChainSuccession",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "SRM: Awaiting Approval"
+        ]
+      ]
+    },
+    {
+      "template": "ChainSuccession",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "SRM: Held"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Clear Invoice"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Clear Invoice"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Clear Invoice"
+        ],
+        [
+          "Record Service Entry Sheet"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Clear Invoice"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "SRM: Change was Transmitted"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Record Goods Receipt"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Record Invoice Receipt"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Record Invoice Receipt"
+        ],
+        [
+          "Record Service Entry Sheet"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Record Invoice Receipt"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Record Service Entry Sheet"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Record Service Entry Sheet"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Create Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "SRM: In Transfer to Execution Syst."
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "SRM: In Transfer to Execution Syst."
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "SRM: Held"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "SRM: Incomplete"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Invoice Receipt"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Invoice Receipt"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Invoice Receipt"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Invoice Receipt"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Invoice Receipt"
+        ],
+        [
+          "SRM: Held"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Invoice Receipt"
+        ],
+        [
+          "SRM: Incomplete"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Cancel Invoice Receipt"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Delivery Indicator"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Delivery Indicator"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Delivery Indicator"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Delivery Indicator"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Delivery Indicator"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Delivery Indicator"
+        ],
+        [
+          "SRM: Held"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Delivery Indicator"
+        ],
+        [
+          "SRM: Incomplete"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Delivery Indicator"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Final Invoice Indicator"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Final Invoice Indicator"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Final Invoice Indicator"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Final Invoice Indicator"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Final Invoice Indicator"
+        ],
+        [
+          "SRM: Held"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Final Invoice Indicator"
+        ],
+        [
+          "SRM: Incomplete"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Final Invoice Indicator"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Final Invoice Indicator"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Change Final Invoice Indicator"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Clear Invoice"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "Record Service Entry Sheet"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "SRM: Held"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "SRM: Incomplete"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Record Goods Receipt"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Record Invoice Receipt"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Record Service Entry Sheet"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Remove Payment Block"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Remove Payment Block"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Remove Payment Block"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Remove Payment Block"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Remove Payment Block"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Remove Payment Block"
+        ],
+        [
+          "SRM: Held"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Remove Payment Block"
+        ],
+        [
+          "SRM: Incomplete"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Remove Payment Block"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Deleted"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Deleted"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transaction Completed"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transaction Completed"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transaction Completed"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transaction Completed"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transaction Completed"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transaction Completed"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transaction Completed"
+        ],
+        [
+          "SRM: Held"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transaction Completed"
+        ],
+        [
+          "SRM: Incomplete"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transaction Completed"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ],
+        [
+          "SRM: Held"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ],
+        [
+          "SRM: Incomplete"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "SRM: Held"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "SRM: Incomplete"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Change Delivery Indicator"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Clear Invoice"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Clear Invoice"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Clear Invoice"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Record Service Entry Sheet"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "SRM: Deleted"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Delete Purchase Order Item"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Goods Receipt"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Goods Receipt"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Goods Receipt"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Goods Receipt"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Goods Receipt"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Goods Receipt"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Goods Receipt"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Invoice Receipt"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Invoice Receipt"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Invoice Receipt"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Invoice Receipt"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Service Entry Sheet"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Service Entry Sheet"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Service Entry Sheet"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Service Entry Sheet"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Service Entry Sheet"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Record Service Entry Sheet"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "SRM: Deleted"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Record Service Entry Sheet"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "SRM: Deleted"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "SRM: Deleted"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "SRM: Deleted"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "SRM: Held"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Deleted"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Deleted"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Deleted"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "SRM: Deleted"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "SRM: Deleted"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Delete Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "SRM: Deleted"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "SRM: Transaction Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "Cancel Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "Change Delivery Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "Change Final Invoice Indicator"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "Change Price"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "Remove Payment Block"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "SRM: Deleted"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "SRM: Transfer Failed (E.Sys.)"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "Vendor creates debit memo"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Cancel Goods Receipt"
+        ],
+        [
+          "SRM: Deleted"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Cancel Invoice Receipt"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Change Final Invoice Indicator"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Change Final Invoice Indicator"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Change Price"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Remove Payment Block"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "SRM: Deleted"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "Record Service Entry Sheet"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "SRM: Awaiting Approval"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "SRM: Complete"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "SRM: Created"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "SRM: Document Completed"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "SRM: In Transfer to Execution Syst."
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "SRM: Ordered"
+        ]
+      ]
+    },
+    {
+      "template": "RespondedExistence",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Create Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Record Service Entry Sheet"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "SRM: Awaiting Approval"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "SRM: Change was Transmitted"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "SRM: Document Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "SRM: In Transfer to Execution Syst."
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "SRM: Ordered"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Held"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Create Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Record Service Entry Sheet"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "SRM: Awaiting Approval"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "SRM: Change was Transmitted"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "SRM: Complete"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "SRM: Document Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "SRM: In Transfer to Execution Syst."
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "SRM: Ordered"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "SRM: Incomplete"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Response",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Create Purchase Order Item"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Record Goods Receipt"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Record Goods Receipt"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Record Goods Receipt"
+        ],
+        [
+          "Record Service Entry Sheet"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Record Invoice Receipt"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Record Service Entry Sheet"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Record Service Entry Sheet"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "Create Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "SRM: Change was Transmitted"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "SRM: Document Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "SRM: In Transfer to Execution Syst."
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Awaiting Approval"
+        ],
+        [
+          "SRM: Ordered"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Change was Transmitted"
+        ],
+        [
+          "Vendor creates invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "Create Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "SRM: Change was Transmitted"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "SRM: Document Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "SRM: In Transfer to Execution Syst."
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Complete"
+        ],
+        [
+          "SRM: Ordered"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "Create Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "SRM: Awaiting Approval"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "SRM: Change was Transmitted"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "SRM: Complete"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "SRM: Document Completed"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "SRM: In Transfer to Execution Syst."
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Created"
+        ],
+        [
+          "SRM: Ordered"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "Create Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "SRM: Change was Transmitted"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "SRM: In Transfer to Execution Syst."
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Document Completed"
+        ],
+        [
+          "SRM: Ordered"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "Create Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "SRM: Change was Transmitted"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: In Transfer to Execution Syst."
+        ],
+        [
+          "SRM: Ordered"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "Create Purchase Order Item"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "SRM: Ordered"
+        ],
+        [
+          "SRM: Change was Transmitted"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Vendor creates debit memo"
+        ],
+        [
+          "Cancel Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "Clear Invoice"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "Record Goods Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "Record Invoice Receipt"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "Vendor creates invoice"
+        ],
+        [
+          "Record Service Entry Sheet"
+        ]
+      ]
+    }
+  ]
+}

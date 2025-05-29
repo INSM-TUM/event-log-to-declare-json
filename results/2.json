@@ -1,0 +1,112 @@
+{
+  "name": "event-logs/event_log_2_DeclareModel",
+  "tasks": [
+    {
+      "name": "a"
+    },
+    {
+      "name": "b"
+    },
+    {
+      "name": "c"
+    },
+    {
+      "name": "e"
+    }
+  ],
+  "constraints": [
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "b"
+        ],
+        [
+          "c"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "c"
+        ],
+        [
+          "b"
+        ]
+      ]
+    },
+    {
+      "template": "End",
+      "parameters": [
+        [
+          "e"
+        ]
+      ]
+    },
+    {
+      "template": "Init",
+      "parameters": [
+        [
+          "a"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "a"
+        ],
+        [
+          "e"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "b"
+        ],
+        [
+          "e"
+        ]
+      ]
+    },
+    {
+      "template": "Precedence",
+      "parameters": [
+        [
+          "c"
+        ],
+        [
+          "e"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "a"
+        ],
+        [
+          "b"
+        ]
+      ]
+    },
+    {
+      "template": "Succession",
+      "parameters": [
+        [
+          "a"
+        ],
+        [
+          "c"
+        ]
+      ]
+    }
+  ]
+}

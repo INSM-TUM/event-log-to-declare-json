@@ -1,0 +1,198 @@
+{
+  "name": "event-logs/event_log_3_DeclareModel",
+  "tasks": [
+    {
+      "name": "a"
+    },
+    {
+      "name": "b"
+    },
+    {
+      "name": "d"
+    },
+    {
+      "name": "e"
+    },
+    {
+      "name": "f"
+    }
+  ],
+  "constraints": [
+    {
+      "template": "ChainPrecedence",
+      "parameters": [
+        [
+          "e"
+        ],
+        [
+          "a"
+        ]
+      ]
+    },
+    {
+      "template": "ChainPrecedence",
+      "parameters": [
+        [
+          "e"
+        ],
+        [
+          "b"
+        ]
+      ]
+    },
+    {
+      "template": "ChainPrecedence",
+      "parameters": [
+        [
+          "e"
+        ],
+        [
+          "d"
+        ]
+      ]
+    },
+    {
+      "template": "ChainPrecedence",
+      "parameters": [
+        [
+          "e"
+        ],
+        [
+          "f"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "a"
+        ],
+        [
+          "b"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "a"
+        ],
+        [
+          "d"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "a"
+        ],
+        [
+          "f"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "b"
+        ],
+        [
+          "a"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "b"
+        ],
+        [
+          "d"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "b"
+        ],
+        [
+          "f"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "d"
+        ],
+        [
+          "a"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "d"
+        ],
+        [
+          "b"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "d"
+        ],
+        [
+          "f"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "f"
+        ],
+        [
+          "a"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "f"
+        ],
+        [
+          "b"
+        ]
+      ]
+    },
+    {
+      "template": "NotCoExistence",
+      "parameters": [
+        [
+          "f"
+        ],
+        [
+          "d"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "name": "event-logs/event_log_1_DeclareModel",
+  "tasks": [
+    {
+      "name": "a"
+    },
+    {
+      "name": "b"
+    },
+    {
+      "name": "c"
+    },
+    {
+      "name": "d"
+    }
+  ],
+  "constraints": [
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "a"
+        ],
+        [
+          "c"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "b"
+        ],
+        [
+          "d"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "c"
+        ],
+        [
+          "a"
+        ]
+      ]
+    },
+    {
+      "template": "CoExistence",
+      "parameters": [
+        [
+          "d"
+        ],
+        [
+          "b"
+        ]
+      ]
+    }
+  ]
+}
