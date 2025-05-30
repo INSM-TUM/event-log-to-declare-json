@@ -1,5 +1,5 @@
 [package]
-name = "matrix_classifier"
+name = "declare_json_generator"
 version = "0.1.0"
 edition = "2021"
 
@@ -14,14 +14,14 @@ clap = { version = "4.0", features = ["derive"] }
 yew = { version = "0.21", features = ["csr"] }
 wasm-bindgen = "0.2"
 web-sys = { version = "0.3", features = [
-    "File", 
-    "FileList", 
-    "FileReader", 
-    "HtmlInputElement", 
+    "File",
+    "FileList",
+    "FileReader",
+    "HtmlInputElement",
     "ProgressEvent",
-    "MouseEvent", 
-    "Event", 
-    "InputEvent", 
+    "MouseEvent",
+    "Event",
+    "InputEvent",
 ]}
 js-sys = "0.3"
 wasm-bindgen-futures = "0.4"
@@ -37,5 +37,5 @@ gloo-console = "0.3.0"
 # "js" for wasm randomness
 uuid = { version = "1.0", features = ["v4", "js"] }
 
-instant = { version = "0.1", features = ["wasm-bindgen"] } 
+instant = { version = "0.1", features = ["wasm-bindgen"] }
 tokio = { version = "1", default-features = false, features = ["rt", "macros", "sync"] }
