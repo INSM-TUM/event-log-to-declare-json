@@ -22,11 +22,15 @@ web-sys = { version = "0.3", features = [
     "MouseEvent",
     "Event",
     "InputEvent",
+    "HtmlAnchorElement",
+    "Url",
 ]}
 js-sys = "0.3"
 wasm-bindgen-futures = "0.4"
 
 thiserror = "1.0"
+
+gloo-utils = "0.2"
 
 # If getrandom is used directly or by another crate for wasm, it needs 'js' feature
 getrandom = { version = "0.2", features = ["js"] }

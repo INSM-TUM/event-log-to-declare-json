@@ -3,28 +3,77 @@ use serde::Serialize;
 
 use crate::matrix_generation::{Activity, InputMatrix};
 use crate::dependency_types::{
-    dependency::Dependency,
     temporal::{DependencyType as TempEnum, Direction as TempDir},
     existential::{DependencyType as ExisEnum, Direction as ExisDir},
 };
 
-#[derive(Serialize, Debug, Clone)]
+#[derive(Serialize, Debug, Clone, PartialEq)]
 pub struct DeclareTask {
     pub name: String,
 }
 
-#[derive(Serialize, Debug, Clone)]
+#[derive(Serialize, Debug, Clone, PartialEq)]
 pub struct DeclareConstraint {
     pub template: String,
     pub parameters: Vec<Vec<String>>,
 }
 
- #[derive(Serialize, Debug)]
+ #[derive(Serialize, Debug, Clone, PartialEq)]
 pub struct DeclareModel {
     pub name: String,
     pub tasks: Vec<DeclareTask>,
     pub constraints: Vec<DeclareConstraint>,
 }
+
+pub fn declare_model_to_txt(model: &DeclareModel) -> String {
+    let mut txt_output = String::new();
+
+    let mut constraints_map: std::collections::HashMap<String, Vec<&DeclareConstraint>> = std::collections::HashMap::new();
+    for constraint in &model.constraints {
+        constraints_map.entry(constraint.template.clone()).or_default().push(constraint);
+    }
+
+    txt_output.push_str("{
+");
+
+    let mut first_template = true;
+    for (template, constraints) in &constraints_map {
+        if !first_template {
+            txt_output.push_str(",
+");
+        }
+        first_template = false;
+
+        txt_output.push_str(&format!("  \"{}\": {{\n",
+ template.to_lowercase()));
+        
+        let mut first_constraint = true;
+        for constraint in constraints {
+            if !first_constraint {
+                txt_output.push_str(",\n");
+            }
+            first_constraint = false;
+
+            if constraint.parameters.len() == 1 && constraint.parameters[0].len() == 1 {
+                // Unary constraint
+                txt_output.push_str(&format!("    \"{}\": 1", constraint.parameters[0][0]));
+            } else if constraint.parameters.len() == 2 {
+                // Binary constraint
+                let param1 = &constraint.parameters[0][0];
+                let param2 = &constraint.parameters[1][0];
+                txt_output.push_str(&format!("    (\"{}\", \"{}\"): {{\"support\": 1.0, \"confidence\": 1.0}}", param1, param2));
+            }
+        }
+        txt_output.push_str("\n  }");
+    }
+
+    txt_output.push_str("
+}
+");
+
+    txt_output
+}
+
 
 pub fn matrix_to_declare_model(
     matrix: &InputMatrix,

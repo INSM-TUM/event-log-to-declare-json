@@ -5,7 +5,7 @@ mod declare_translation;
 
 use matrix_generation::generate_dependency_matrix;
 use parser::parse_into_traces;
-use crate::declare_translation::{matrix_to_declare_model, DeclareModel};
+use crate::declare_translation::{matrix_to_declare_model, DeclareModel, declare_model_to_txt};
 
 use std::rc::Rc;
 use wasm_bindgen::prelude::*;
@@ -13,7 +13,9 @@ use wasm_bindgen_futures::spawn_local;
 use web_sys::{File, HtmlInputElement, MouseEvent, ProgressEvent, FileReader, Event, InputEvent};
 use yew::prelude::*;
 use clap::Parser;
-use gloo_console; // Added for logging
+use gloo_console;
+use gloo_utils::document;
+use wasm_bindgen::JsCast;
 
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]
@@ -36,13 +38,21 @@ enum AppError {
     ClassificationError(String),
 }
 
+#[derive(Clone, PartialEq, Debug)]
+enum ExportFormat {
+    Json,
+    Txt,
+}
+
 enum AppMessage {
     FileSelected(Option<File>),
     FileLoaded(Result<String, String>),
     ExistentialThresholdChanged(String),
     TemporalThresholdChanged(String),
     ProcessLog,
-    ProcessingComplete(Result<DeclareModel, AppError>), // New message
+    ProcessingComplete(Result<DeclareModel, AppError>),
+    FormatChanged(ExportFormat),
+    DownloadFile,
 }
 
 #[derive(Clone, PartialEq)]
@@ -55,6 +65,8 @@ struct AppState {
     is_processing: bool,
     error_message: Option<String>, // To display errors
     declare_model_json: Option<String>, // To store the resulting JSON
+    declare_model_txt: Option<String>,
+    export_format: ExportFormat,
 }
 
 impl Default for AppState {
@@ -68,6 +80,8 @@ impl Default for AppState {
             is_processing: false,
             error_message: None,
             declare_model_json: None,
+            declare_model_txt: None,
+            export_format: ExportFormat::Json,
         }
     }
 }
@@ -95,7 +109,6 @@ fn app() -> Html {
                     } else {
                         new_state.file_name = None;
                         new_state.file_content = None;
-                        // new_state.xes_file_content_for_display = None; // Removed
                     }
                 }
                 AppMessage::FileLoaded(result) => {
@@ -106,7 +119,6 @@ fn app() -> Html {
                         }
                         Err(err_msg) => {
                             new_state.file_content = None;
-                            // new_state.xes_file_content_for_display = None; // Removed
                             new_state.error_message = Some(format!("File loading error: {}", err_msg));
                         }
                     }
@@ -142,12 +154,36 @@ fn app() -> Html {
                                     new_state.declare_model_json = None;
                                 }
                             }
+                            let txt_output = declare_model_to_txt(&model);
+                            new_state.declare_model_txt = Some(txt_output);
                         }
                         Err(e) => {
                             gloo_console::error!("Processing error:", e.to_string());
                             new_state.error_message = Some(e.to_string());
                             new_state.declare_model_json = None;
+                            new_state.declare_model_txt = None;
                         }
+                    }
+                }
+                AppMessage::FormatChanged(format) => {
+                    new_state.export_format = format;
+                }
+                AppMessage::DownloadFile => {
+                    let file_name = new_state.file_name.as_ref().map_or("model", |s| s.trim_end_matches(".xes"));
+                    let (content, extension) = match new_state.export_format {
+                        ExportFormat::Json => (new_state.declare_model_json.clone(), ".json"),
+                        ExportFormat::Txt => (new_state.declare_model_txt.clone(), ".txt"),
+                    };
+
+                    if let Some(content) = content {
+                        let blob = web_sys::Blob::new_with_str_sequence(&js_sys::Array::of1(&content.into())).unwrap();
+                        let url = web_sys::Url::create_object_url_with_blob(&blob).unwrap();
+                        
+                        let a = document().create_element("a").unwrap().dyn_into::<web_sys::HtmlAnchorElement>().unwrap();
+                        a.set_href(&url);
+                        a.set_download(&format!("{}{}", file_name, extension));
+                        a.click();
+                        web_sys::Url::revoke_object_url(&url).unwrap();
                     }
                 }
             }
@@ -351,11 +387,33 @@ fn app() -> Html {
                 if let Some(json_output_content) = &current_app_state_for_view.declare_model_json {
                     html! {
                         <div style="margin-top: 20px;">
-                            <h2>{ "Generated Declare JSON:" }</h2>
+                            <h2>{ "Generated Declare Model:" }</h2>
+                            <div style="margin-bottom: 10px;">
+                                <label style="margin-right: 10px;">
+                                    <input type="radio" name="format" value="json"
+                                           checked={current_app_state_for_view.export_format == ExportFormat::Json}
+                                           onchange={Callback::from({ let dispatch = dispatch.clone(); move |_| dispatch(AppMessage::FormatChanged(ExportFormat::Json))})} />
+                                    { "JSON" }
+                                </label>
+                                <label>
+                                    <input type="radio" name="format" value="txt"
+                                           checked={current_app_state_for_view.export_format == ExportFormat::Txt}
+                                           onchange={Callback::from({ let dispatch = dispatch.clone(); move |_| dispatch(AppMessage::FormatChanged(ExportFormat::Txt))})} />
+                                    { "TXT (.txt)" }
+                                </label>
+                            </div>
+
                             <textarea readonly=true rows="20" style="width: 100%; font-family: monospace; white-space: pre; border: 1px solid #ccc; padding: 10px;"
-                                value={json_output_content.clone()} >
-                                // Content is now set via the value attribute
+                                value={
+                                    match current_app_state_for_view.export_format {
+                                        ExportFormat::Json => current_app_state_for_view.declare_model_json.clone().unwrap_or_default(),
+                                        ExportFormat::Txt => current_app_state_for_view.declare_model_txt.clone().unwrap_or_default(),
+                                    }
+                                } >
                             </textarea>
+                            <button onclick={Callback::from({ let dispatch = dispatch.clone(); move |_| dispatch(AppMessage::DownloadFile)})} style="margin-top: 10px; padding: 8px 12px;">
+                                { "Download" }
+                            </button>
                         </div>
                     }
                 } else {
